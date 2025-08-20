@@ -116,7 +116,7 @@ Lint
 
 
 ## License
-- MIT (or your preferred license). Replace this section as needed.
+- MIT 
 
 ## Acknowledgements
 - React, Vite, React Router, Tailwind CSS teams and communities.
