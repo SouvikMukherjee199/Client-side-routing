@@ -17,21 +17,21 @@ const Home = () => {
 
           <div className="grid  md:grid-cols-3 gap-6">
             <div className="p-6 rounded-lg dark:bg-white border  border-slate-200  hover:shadow-lg transition">
-              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2Zm1 15h-2v-2h2Zm0-4h-2V7h2Z"/></svg>
+              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center dark:border-indigo-700 dark:border-2 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-blue-600 " viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2Zm1 15h-2v-2h2Zm0-4h-2V7h2Z"/></svg>
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">Elegant by default</h3>
               <p className="text-slate-600 text-sm">Well-crafted UI blocks and sensible defaults ensure an experience that looks professional out of the box.</p>
             </div>
             <div className="p-6 rounded-lg dark:bg-white border border-slate-200 hover:shadow-lg transition">
-              <div className="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center dark:border-green-500 dark:border-2 mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-emerald-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22a1 1 0 0 1-1-1v-6H7a1 1 0 0 1-.832-1.555l5-7A1 1 0 0 1 12 6v6h4a1 1 0 0 1 .832 1.555l-5 7A1 1 0 0 1 12 22Z"/></svg>
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">Performance first</h3>
               <p className="text-slate-600 text-sm">Optimized assets and thoughtful patterns ensure snappy load times and a smooth user experience.</p>
             </div>
             <div className="p-6 rounded-lg dark:bg-white border border-slate-200 hover:shadow-lg transition">
-              <div className="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-purple-50 flex items-center justify-center dark:border-violet-700 dark:border-2 mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-purple-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 1 7l11 5 9-4.091V17h2V7z"/><path d="M11 12.84 3 9v8l8 4 8-4V9l-8 3.84Z"/></svg>
               </div>
               <h3 className="text-lg font-semibold text-slate-900 mb-2">Built to scale</h3>
