@@ -72,7 +72,7 @@ const Feature = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-slate-50">
+      <section className="bg-slate-50 dark:bg-slate-500 dark:text-white">
         <div className="max-w-screen-xl mx-auto px-4 py-16 md:py-20">
           <div className="max-w-3xl">
             <span className="inline-flex items-center rounded-full bg-indigo-50 text-indigo-700 px-3 py-1 text-xs font-medium">Platform</span>
@@ -88,7 +88,7 @@ const Feature = () => {
 
       {/* Features grid */}
       <section className="bg-white">
-        <div className="max-w-screen-xl mx-auto px-4 py-12 md:py-16">
+        <div className="max-w-screen-xl mx-auto px-4 py-12 md:py-16  dark:bg-slate-700">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
               <div key={f.title} className="group rounded-xl border border-slate-200 bg-white p-6 hover:shadow-md transition">

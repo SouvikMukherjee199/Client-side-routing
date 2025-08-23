@@ -63,7 +63,7 @@ const Header = ({ theme = 'light', onToggleTheme }) => {
               className="inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:text-slate-300 dark:hover:bg-slate-800"
             >
               <span className="sr-only">Toggle theme</span>
-              {theme === 'dark' ? (
+              {theme === 'light' ? (
                 // Sun icon
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
                   <circle cx="12" cy="12" r="4" />
@@ -146,7 +146,7 @@ const Header = ({ theme = 'light', onToggleTheme }) => {
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                 </svg>
               )}
-              <span className="text-sm">{theme === 'dark' ? 'Light theme' : 'Dark theme'}</span>
+              <span className="text-sm text-indigo-600 font-bold">{theme === 'dark' ? 'Light theme' : 'Dark theme'}</span>
             </button>
 
             <NavLink
