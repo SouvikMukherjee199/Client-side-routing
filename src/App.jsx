@@ -10,6 +10,8 @@ import Blog from './components/Pages/Blog'
 import NotFound from './components/NotFound'
 import Login from './components/Auth/Login'
 import SignUp from './components/Auth/SignUp'
+import { ThemeProvider } from './context/ThemeContext'
+import { useEffect, useState } from 'react'
 
 
 const appRouter = createBrowserRouter([
@@ -31,7 +33,27 @@ const appRouter = createBrowserRouter([
 ])
 
  const App = () => {
-  return <RouterProvider router={appRouter}/>
+   const [themeMode, setthemeMode] = useState("light");
+
+   const lightTheme = () => {
+    setthemeMode("light");
+   }
+
+   const darkTheme = () => {
+    setthemeMode("dark");
+   }
+
+
+   useEffect(()=>{
+    document.querySelector("html").classList.remove("light", "dark");
+    document.querySelector("html").classList.add(themeMode);
+   },[themeMode])
+
+  return (
+  <ThemeProvider value={{themeMode, lightTheme, darkTheme}}>
+  <RouterProvider router={appRouter}/>
+  </ThemeProvider>
+  )
 }
 
 export default App
