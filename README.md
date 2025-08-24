@@ -12,8 +12,9 @@ A concise, production‑style demo of client‑side routing in React using React
   - Content‑rich Feature and Blog screens
   - Login and SignUp pages for auth flows (UI only)
 - Dark/Light theme toggle
-  - Theme state persisted in localStorage
+  - Implemented with React Context API (ThemeProvider + useTheme)
   - Class‑based dark mode via Tailwind (dark class on <html>)
+  - No persistence by default (easy to add with localStorage)
 - Built with Vite for fast dev/build
 
 ## Tech Stack
@@ -26,10 +27,11 @@ A concise, production‑style demo of client‑side routing in React using React
 - index.html – Vite entry HTML
 - src/
   - main.jsx – App bootstrap
-  - App.jsx – Router setup and route tree
+  - App.jsx – Router setup, theme state + ThemeProvider, toggles <html> class
   - index.css – Tailwind entry
+  - context/ThemeContext.js – Theme Context + Provider alias + useTheme hook
   - components/
-    - HOC/Default.HOC.jsx – Layout wrapper (Header + Outlet + Footer) and theme control
+    - HOC/Default.HOC.jsx – Layout wrapper (Header + Outlet + Footer)
     - Header.jsx – Top navigation with dark/light toggle
     - Footer.jsx – Footer with resource links
     - Home.jsx – Landing page (index route)
@@ -57,12 +59,14 @@ The route tree is defined in src/App.jsx using createBrowserRouter:
 DefaultHOC wraps all child routes with a shared Header and Footer via <Outlet />.
 
 ## Theme (Light/Dark)
-- Global theme logic is in src/components/HOC/Default.HOC.jsx
-  - Reads localStorage (key: theme) and falls back to system preference
-  - Toggles dark class on document.documentElement (<html>) for Tailwind dark: styles
-  - Exposes a toggle handler to Header via props
-- Header shows a theme toggle (sun/moon) on desktop and inside the mobile menu
-- Footer and pages include dark: variants for backgrounds, borders, and text
+- Theme state is managed at the top level in src/App.jsx and provided via React Context:
+  - src/context/ThemeContext.js exports ThemeContext, a ThemeProvider alias, and a useTheme() hook
+  - App.jsx stores themeMode in state and defines lightTheme() and darkTheme() to switch modes
+  - App.jsx wraps the app with <ThemeProvider value={{ themeMode, lightTheme, darkTheme }}>
+  - A useEffect in App.jsx applies the 'light' or 'dark' class to document.documentElement (<html>) for Tailwind
+- Components consume the theme via useTheme()
+  - Header.jsx reads themeMode and calls lightTheme()/darkTheme() on toggle
+- No persistence is implemented by default; you can persist themeMode to localStorage if desired
 
 Tailwind config enables class-based dark mode:
 ```
@@ -104,7 +108,7 @@ Lint
 ## Troubleshooting
 - Dark theme not switching
   - Ensure tailwind.config.js has darkMode: 'class'
-  - Confirm the code toggles the dark class on <html> (Default.HOC.jsx)
+  - Confirm the code toggles the dark class on <html> (in App.jsx)
   - Restart the dev server after adding/editing Tailwind config
   - Verify src/index.css imports Tailwind (it should contain @import "tailwindcss";)
 - Styles not updating
