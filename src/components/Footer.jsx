@@ -39,8 +39,8 @@ const Footer = ({ theme = 'light' }) => {
 
           {/* Product */}
           <div>
-            <h6 className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white">Product</h6>
-            <ul className="mt-4 space-y-3 text-sm">
+            <h6 className="text-sm ml-7 font-semibold tracking-wide text-slate-900 dark:text-white">Product</h6>
+            <ul className="mt-4 space-y-3  text-sm">
               <li><a href="javascript:void(0)" className="hover:text-slate-900 dark:hover:text-white">Overview</a></li>
               <li><a href="javascript:void(0)" className="hover:text-slate-900 dark:hover:text-white">Features</a></li>
               <li><a href="javascript:void(0)" className="hover:text-slate-900 dark:hover:text-white">Pricing</a></li>
@@ -50,7 +50,7 @@ const Footer = ({ theme = 'light' }) => {
 
           {/* Company */}
           <div>
-            <h6 className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white">Company</h6>
+            <h6 className="text-sm ml-7 lg:ml-4 font-semibold tracking-wide text-slate-900 dark:text-white">Company</h6>
             <ul className="mt-4 space-y-3 text-sm">
               <li><a href="javascript:void(0)" className="hover:text-slate-900 dark:hover:text-white">About</a></li>
               <li><a href="javascript:void(0)" className="hover:text-slate-900 dark:hover:text-white">Careers</a></li>
@@ -61,7 +61,7 @@ const Footer = ({ theme = 'light' }) => {
 
           {/* Resources */}
           <div>
-            <h6 className="text-sm font-semibold tracking-wide text-slate-900 dark:text-white">Resources</h6>
+            <h6 className="text-sm ml-7 font-semibold tracking-wide text-slate-900 dark:text-white">Resources</h6>
             <ul className="mt-4 space-y-3 text-sm">
               <li><a href="javascript:void(0)" className="hover:text-slate-900 dark:hover:text-white">Documentation</a></li>
               <li><a href="javascript:void(0)" className="hover:text-slate-900 dark:hover:text-white">Guides</a></li>
